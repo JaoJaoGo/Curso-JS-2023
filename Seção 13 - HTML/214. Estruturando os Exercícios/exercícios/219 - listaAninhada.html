@@ -1,0 +1,46 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span wm-folder>backend</span>
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li><span>produto.js</span></li>
+                    <li><span>usuario.js</span></li>
+                    <li><span>venda.js</span></li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li><span>banco.js</span></li>
+                    <li><span>rotas.js</span></li>
+                    <li><span>servidor.js</span></li>
+                </ul>
+            </li>
+        </ul>
+        <span wm-folder>frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li><span>app.css</span></li>
+                    <li><span>app.js</span></li>
+                    <li><span>index.html</span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="./exercícios/219 - listaAlinhada.css">
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function(e) {
+            const ul = folder.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>

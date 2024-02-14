@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercícios HTML</title>
+        <style>
+            #conteudo {
+                padding: 30px 0px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Exercícios HTML</h1>
+        </header>
+        
+        <nav>
+            <a href wm-nav="exercícios/214 - teste.html">00 - Teste</a> |
+            <a href wm-nav="exercícios/216 - texto1.html">01 - Texto 1</a> |
+            <a href wm-nav="exercícios/217 - texto2.html">02 - Texto 2</a> |
+            <a href wm-nav="exercícios/218 - listas.html">03 - Listas</a> |
+            <a href wm-nav="exercícios/219 - listaAninhada.html">04. Lista Aninhada</a> |
+            <a href wm-nav="exercícios/221 - links.html">05. Links</a> |
+            <a href wm-nav="exercícios/223 - tabela.html">06. Tabela</a> |
+            <a href wm-nav="exercícios/225 - Form/225 - form.html">07. Formulário</a> |
+            <a href wm-nav="exercícios/228 - imagens.html">08. Imagens</a> |
+            <a href wm-nav="exercícios/231 - video.html">09. Vídeo</a> |
+            <a href wm-nav="exercícios/233 - tagsNaoVisuais.html">10. Tags não visuais</a> |
+        </nav>
+
+        <section id="conteudo"></section>
+
+        <footer>
+            Curso de Web Moderno
+        </footer>
+
+        <script>
+            // Isso seleciona todos os elementos no documento que possuem o atributo 'wm-nav', o forEach itera sobre cada
+            // elemento encontrado e executa a função fornecida.
+            document.querySelectorAll('[wm-nav]').forEach(link => {
+
+                // Seleciona o elemento com o ID 'conteudo' e atribui a constante 'conteudo'.
+                const conteudo = document.getElementById('conteudo')
+
+                // Define um evento de clique para o elemento link. A função é uma callback que será executada quando o link
+                // for clicado. O parâmetro 'e' representa o evento do clique.
+                link.onclick = function(e) {
+
+                    // Isso impede o comportamento padrão do evento. Nesse contexto, previne o navegador de seguir o link, o
+                    // que é crucial para o funcionamento da navegação na mesma página usando o conteúdo dinâmico.
+                    e.preventDefault()
+
+                    // O 'link.getAttribute('wm-nav')' obtém o valor do atributo 'wm-nav' do link, que é a URL do recurso a ser
+                    // carregado. O 'fetch(...)' realiza uma requisição HTTP para a URL especificada.
+                    fetch(link.getAttribute('wm-nav'))
+                        // Isso encadeia uma promisse para extrair o corpo da resposta como texto. A resposta original é
+                        // do tipo 'Response' e este trecho converte-a para texto.
+                        .then(resp => resp.text())
+                        // Isso encadeia outra promisse para atribuir o HTML retornado à propriedade 'innerHTML' do elemento
+                        // com o ID 'conteudo' retornado da requisição.
+                        .then(html => conteudo.innerHTML = html)
+                }
+            })
+        </script>
+    </body>
+</html>
