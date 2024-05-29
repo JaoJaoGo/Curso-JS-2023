@@ -1,0 +1,21 @@
+{
+  "name": "exercicios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server . -c-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "5.3.3",
+    "http-server": "14.1.1",
+    "jquery": "3.7.1",
+    "popper.js": "1.14.3",
+    "node-sass": "9.0.0",
+    "sass-loader": "^14.2.1",
+    "webpack": "5.91.0"
+  }
+}
