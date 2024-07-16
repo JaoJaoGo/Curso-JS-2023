@@ -1,0 +1,64 @@
+.layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    border: solid 2px white;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 30%; /* Limita a largura máxima para evitar estouro */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+.inputs {
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 10px;
+    width: 100%; /* Garante que os elementos internos não saiam dos limites */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .inputs {
+        grid-template-columns: 1fr; /* Ajusta para uma coluna */
+        grid-template-rows: 1fr 1fr; /* Adiciona linhas automáticas */
+    }
+}
+
+.inpute {
+    padding: 2px;
+    border-radius: 8px;
+    color: black;
+    width: 100%; /* Garante que o input ocupe toda a largura disponível */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+.botao {
+    background-color: dodgerblue;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.botao:active {
+    background-color: #0d6ac6;
+}
+
+.lista {
+    text-align: center;
+}
+
+.lista hr {
+    margin-bottom: 15px;
+}
